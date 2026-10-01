@@ -2,7 +2,7 @@
 
 Plataforma de cartão digital inteligente desenvolvida para pequenas empresas.
 
-O LinkHubb permite que clientes acessem instantaneamente canais de contato e informações do negócio por meio de tags NFC ou QR Codes, proporcionando uma experiência rápida, prática e sem necessidade de aplicativos.
+O LinkHub permite que clientes acessem instantaneamente canais de contato e informações do negócio por meio de tags NFC ou QR Codes, proporcionando uma experiência rápida, prática e sem necessidade de aplicativos.
 
 ## Funcionalidades
 

@@ -2,7 +2,7 @@
 
 Smart digital business card platform designed for small businesses.
 
-LinkHubb enables customers to instantly access business contact channels through NFC tags or QR Codes, providing a simple and fast mobile experience.
+LinkHub enables customers to instantly access business contact channels through NFC tags or QR Codes, providing a simple and fast mobile experience.
 
 ## Features
 

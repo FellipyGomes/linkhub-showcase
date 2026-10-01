@@ -589,9 +589,8 @@ function mostrarInicio(){
   `;
 }
 
-const clienteId = window.location.pathname
-  .replace(/^\/+|\/+$/g, "")
-  .toLowerCase();
+const params = new URLSearchParams(window.location.search);
+const clienteId = params.get("cliente");
 
 if (!clienteId) {
 

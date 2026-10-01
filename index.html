@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+
+  <title>Contato Digital</title>
+
+  <style>
+  *{box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+  :root{
+    --accent:#FFC107;
+  }
+
+    body{
+      min-height:100vh;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:#111;
+      color:#000000;
+      display:flex;
+      justify-content:center;
+      padding:24px 16px;
+    }
+
+    .page{
+      width:100%;
+      max-width:430px;
+      min-height:calc(100vh - 48px);
+      background:#ffffff;
+      border:1px solid var(--accent);
+      border-radius:24px;
+      padding:34px 22px 24px;
+      display:flex;
+      flex-direction:column;
+      box-shadow:0 8px 30px rgba(0,0,0,.06);
+    }
+
+    /* >>>>> PÁGINA DO CLIENTE, BELE? <<<<< */
+
+    .brand{
+      text-align:center;
+      margin-bottom:28px;
+    }
+
+    .logo{
+      width:180px;
+      height:180px;
+      object-fit:contain;
+      display:block;
+      margin:0 auto 16px;
+    }
+
+    .brand h1{
+      font-size:25px;
+      line-height:1.15;
+      font-weight:750;
+      letter-spacing:-.5px;
+    }
+
+    .subtitle{
+      margin-top:9px;
+      color:#312f2f;
+      font-size:15px;
+      line-height:1.45;
+    }
+
+    .status{
+      display:none;
+      margin-top:10px;
+      padding:4px 16px;
+      border-radius:20px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+    }
+
+    .status.aberto{
+      color:#3ddc73;
+      background:rgba(61,220,115,.12);
+      border:1px solid rgba(61,220,115,.45);
+    }
+
+    .status.fechado{
+      color:#ff5c5c;
+      background:rgba(255,92,92,.12);
+      border:1px solid rgba(255,92,92,.45);
+    }
+
+    .options{
+      display:flex;
+      flex-direction:column;
+      gap:13px;
+    }
+
+    .option{
+      display:none;
+      align-items:center;
+      gap:15px;
+      width:100%;
+      min-height:76px;
+      padding:13px 16px;
+      border:1px solid #000000;
+      border-radius:17px;
+      background:#fff;
+      color:#111;
+      text-decoration:none;
+      transition:.15s;
+    }
+
+    .option:hover{
+      transform:translateY(-1px);
+      box-shadow:0 5px 18px rgba(0,0,0,.07);
+    }
+
+    .icon{
+      width:48px;
+      height:48px;
+      flex:0 0 48px;
+      border-radius:14px;
+      background:#f2f2f2;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+    }
+
+    .text{
+      flex:1;
+    }
+
+    .text strong{
+      display:block;
+      font-size:16px;
+      margin-bottom:3px;
+    }
+
+    .text span{
+      display:block;
+      color:#777;
+      font-size:13px;
+    }
+
+    .arrow{
+      color:#aaa;
+      font-size:22px;
+    }
+
+    .footer{
+      margin-top:auto;
+      padding-top:28px;
+      text-align:center;
+      color:#999;
+      font-size:12px;
+      line-height:1.6;
+    }
+
+    .nfc{
+      margin-bottom:8px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+
+     /* >>>>> HOME PAGE, ANTA <<<<< */
+
+    .home-brand{
+      text-align:center;
+      margin-bottom:24px;
+    }
+    .home-logo{
+  width:320px;
+  height:auto;
+  display:block;
+  margin:0 auto;
+}
+
+    .home-title{
+      font-size:23px;
+      font-weight:750;
+      letter-spacing:-.5px;
+    }
+
+    .home-subtitle{
+      margin-top:8px;
+      color:#FFC107;
+      font-size:15px;
+      line-height:1.45;
+    }
+
+    .passos{
+      list-style:none;
+      margin:24px 0 26px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .passos li{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      font-size:15px;
+      line-height:1.35;
+      color:#e6e6e6;
+    }
+
+    .passos b{
+      flex:0 0 30px;
+      height:30px;
+      border-radius:50%;
+      background:#FFC107;
+      color:#111;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
+    }
+
+    .home-cta{
+      margin-top:22px;
+    }
+
+    .home-cta-text{
+      font-size:14px;
+      color:#373737;
+      line-height:1.5;
+      margin-bottom:12px;
+    }
+
+    .home-option{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      width:100%;
+      min-height:76px;
+      padding:13px 16px;
+      border:1px solid #FFC107;
+      border-radius:17px;
+      background:#ffffff;
+      color:#111;
+      text-decoration:none;
+      transition:.15s;
+    }
+
+    .home-option:hover{
+      transform:translateY(-1px);
+      box-shadow:0 5px 18px rgba(0,0,0,.07);
+    }
+  </style>
+</head>
+
+<body>
+
+<main class="page">
+
+  <header class="brand">
+    <img id="logo" class="logo" alt="Logo">
+
+    <h1 id="titulo">
+      Como podemos ajudar?
+    </h1>
+
+    <p id="subtitle" class="subtitle">
+      Escolha uma opção para continuar.
+    </p>
+
+    <p id="status" class="status"></p>
+  </header>
+
+  <section class="options">
+
+    <a id="whatsapp" class="option" target="_blank">
+      <div class="icon">
+        <i class="fa-brands fa-whatsapp"></i>
+      </div>
+
+      <div class="text">
+        <strong>WhatsApp</strong>
+        <span>Entre em contato conosco</span>
+      </div>
+
+      <div class="arrow">›</div>
+    </a>
+
+    <a id="instagram" class="option" target="_blank">
+      <div class="icon">
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+
+      <div class="text">
+        <strong>Instagram</strong>
+        <span>Acompanhe nossas novidades</span>
+      </div>
+
+      <div class="arrow">›</div>
+    </a>
+
+    <a id="google" class="option" target="_blank">
+      <div class="icon">
+        <i class="fa-brands fa-google"></i>
+      </div>
+
+      <div class="text">
+        <strong>Avalie nossa empresa</strong>
+        <span>Leva menos de 1 minuto</span>
+      </div>
+
+      <div class="arrow">›</div>
+    </a>
+
+    <a id="site" class="option" target="_blank">
+      <div class="icon">
+        <i class="fa-solid fa-globe"></i>
+      </div>
+
+      <div class="text">
+        <strong>Site</strong>
+        <span>Visite nosso site</span>
+      </div>
+
+      <div class="arrow">›</div>
+    </a>
+
+    <a id="localizacao" class="option" target="_blank">
+      <div class="icon">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+
+      <div class="text">
+        <strong>Como chegar aqui</strong>
+        <span>Veja a rota até nós</span>
+      </div>
+
+      <div class="arrow">›</div>
+    </a>
+
+  </section>
+
+  <footer class="footer">
+    <div class="nfc">
+      <i class="fa-solid fa-signal"></i>
+      Encoste o celular novamente para acessar
+    </div>
+
+  </footer>
+
+</main>
+
+<script>
+
+const clientes = {
+
+  "burgerking": {
+    nome: "Burger King",
+    subtitle: "Coma como um rei",
+    logo: "logos/bk.png",
+    whatsapp: "https://wa.me/551130035464",
+    instagram: "https://www.instagram.com/burgerkingbr/",
+    google: "https://search.google.com/local/writereview?placeid=ChIJKV5K-YjNyJQRyDd0PkIOe4U",
+    site: "https://www.burgerking.com.br",
+    localizacao: "https://maps.app.goo.gl/qsB7ycDppHYaUj149",
+    tema: { accent: "#FF8732" },
+    horario: {
+      0: [{ abre:"10:00", fecha:"22:00" }],
+      1: [{ abre:"11:00", fecha:"23:00" }],
+      2: [{ abre:"11:00", fecha:"23:00" }],
+      3: [{ abre:"11:00", fecha:"02:00" }],
+      4: [{ abre:"11:00", fecha:"04:00" }],
+      5: [{ abre:"11:00", fecha:"04:00" }],
+      6: [{ abre:"11:00", fecha:"04:00" }]
+    }
+  },
+
+  "cliente002": {
+    nome: "",
+    subtitle: "",
+    logo: "logos/.jpg",
+    whatsapp: "https://wa.me/",
+    instagram: "https://www.instagram.com//",
+    google: "https://search.google.com/local/writereview?placeid=",
+    site: "",
+    localizacao: "",
+    tema: { accent: "#" },
+    horario: {
+      0: [{ abre:"00:00", fecha:"00:00" }],
+      1: [{ abre:"00:00", fecha:"00:00" }],
+      2: [{ abre:"00:00", fecha:"00:00" }],
+      3: [{ abre:"00:00", fecha:"00:00" }],
+      4: [{ abre:"00:00", fecha:"00:00" }],
+      5: [{ abre:"00:00", fecha:"00:00" }],
+      6: [{ abre:"00:00", fecha:"00:00" }]
+    }
+  },
+
+ "cliente003": {
+    nome: "",
+    subtitle: "",
+    logo: "logos/.jpg",
+    whatsapp: "https://wa.me/",
+    instagram: "https://www.instagram.com//",
+    google: "https://search.google.com/local/writereview?placeid=",
+    site: "",
+    localizacao: "",
+    tema: { accent: "#" },
+    horario: {
+      0: [{ abre:"00:00", fecha:"00:00" }],
+      1: [{ abre:"00:00", fecha:"00:00" }],
+      2: [{ abre:"00:00", fecha:"00:00" }],
+      3: [{ abre:"00:00", fecha:"00:00" }],
+      4: [{ abre:"00:00", fecha:"00:00" }],
+      5: [{ abre:"00:00", fecha:"00:00" }],
+      6: [{ abre:"00:00", fecha:"00:00" }]
+    }
+  },
+
+function configurarBotao(id, link){
+  const botao = document.getElementById(id);
+  if(!botao) return;
+
+  if(link && link.trim() !== ""){
+    botao.href = link;
+    botao.style.display = "flex";
+  }
+}
+
+function estaAberto(horario){
+  if(!horario) return null;
+
+  const agora = new Date();
+  const intervalosHoje = horario[agora.getDay()];
+
+  if(!intervalosHoje || intervalosHoje.length === 0) return false;
+
+  const minutosAgora = agora.getHours() * 60 + agora.getMinutes();
+
+  return intervalosHoje.some(intervalo => {
+    const [hAbre, mAbre] = intervalo.abre.split(":").map(Number);
+    const [hFecha, mFecha] = intervalo.fecha.split(":").map(Number);
+    return minutosAgora >= (hAbre * 60 + mAbre) && minutosAgora <= (hFecha * 60 + mFecha);
+  });
+}
+
+function atualizarStatus(horario){
+  const statusEl = document.getElementById("status");
+  if(!statusEl) return;
+
+  const aberto = estaAberto(horario);
+
+  if(aberto === null){
+    statusEl.style.display = "none";
+    return;
+  }
+
+  statusEl.textContent = aberto ? "Aberto" : "Fechado";
+  statusEl.className = "status " + (aberto ? "aberto" : "fechado");
+  statusEl.style.display = "inline-block";
+}
+
+function aplicarTema(tema){
+  const pageEl = document.querySelector(".page");
+  const accent = (tema && tema.accent) ? tema.accent : "#FFC107";
+  pageEl.style.setProperty("--accent", accent);
+}
+
+function mostrarInicio(){
+
+  document.title = "LinkHubb";
+  aplicarTema(null);
+
+  document.querySelector(".page").innerHTML = `
+
+    <header class="home-brand">
+
+      <div class="home-marca">
+        <img class="home-logo"
+             src="logos/InHub.png"
+             alt="LinkHubb">
+      </div>
+
+  
+      <p class="home-subtitle">
+        Seu negócio a um toque
+      </p>
+
+    </header>
+
+    <ol class="passos">
+
+      <li>
+        <b>1</b>
+        O cliente aproxima o celular ou escaneia o QR Code
+      </li>
+
+      <li>
+        <b>2</b>
+        Sua página abre instantaneamente, sem baixar aplicativos
+      </li>
+
+      <li>
+        <b>3</b>
+        Ele acessa WhatsApp, Instagram e avaliações em apenas um toque
+      </li>
+
+    </ol>
+
+    <section class="options">
+
+      <a href="?cliente=burgerking" class="home-option">
+
+        <div class="icon">
+          <i class="fa-solid fa-eye"></i>
+        </div>
+
+        <div class="text">
+          <strong>Ver demonstração</strong>
+          <span>Veja um exemplo completo</span>
+        </div>
+
+        <div class="arrow">›</div>
+
+      </a>
+
+    </section>
+
+    <div class="home-cta">
+
+      <p class="home-cta-text">
+        Entre em contato conosco para realizar seu orçamento
+      </p>
+
+      <a href="https://wa.me/5519999854416" target="_blank" class="home-option">
+
+        <div class="icon">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+        <div class="text">
+          <strong>Falar no WhatsApp</strong>
+          <span>Solicite seu orçamento agora</span>
+        </div>
+
+        <div class="arrow">›</div>
+
+      </a>
+
+    </div>
+
+    <footer class="footer">
+
+      <div class="nfc">
+
+        <img
+          src="logos/InHub.png"
+          alt="LinkHub"
+          style="
+            width:18px;
+            height:18px;
+            object-fit:contain;
+          ">
+
+        Powered by LinkHub
+
+      </div>
+    </footer>
+
+  `;
+}
+
+const clienteId = window.location.pathname
+  .replace(/^\/+/, "")
+  .toLowerCase();
+
+if (!clienteId) {
+
+  mostrarInicio();
+
+} else {
+
+  const cliente = clientes[clienteId];
+
+  if (cliente) {
+
+    aplicarTema(cliente.tema);
+
+    const tituloEl = document.getElementById("titulo");
+    if (tituloEl) tituloEl.innerText = cliente.nome;
+
+    const logoEl = document.getElementById("logo");
+    if (logoEl && cliente.logo) logoEl.src = cliente.logo;
+
+    const subtitleEl = document.getElementById("subtitle");
+    if (subtitleEl) subtitleEl.innerText = cliente.subtitle || "";
+
+    configurarBotao("whatsapp", cliente.whatsapp);
+    configurarBotao("instagram", cliente.instagram);
+    configurarBotao("google", cliente.google);
+    configurarBotao("site", cliente.site);
+    configurarBotao("localizacao", cliente.localizacao);
+
+    atualizarStatus(cliente.horario);
+
+  } else {
+
+    document.querySelector(".page").innerHTML = `
+      <div style="
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        padding:40px;
+      ">
+        <div style="font-size:56px;margin-bottom:20px;">
+          ⚠️
+        </div>
+
+        <h1 style="margin-bottom:12px;">
+          Cliente não encontrado
+        </h1>
+
+        <p style="
+          color:#666;
+          line-height:1.6;
+        ">
+          O identificador informado não existe ou não está ativo.
+        </p>
+      </div>
+    `;
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
